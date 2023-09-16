@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Ver Libros - Club de Lectura</title>
+</head>
+
+<body>
+
+    <header>
+        <h1>Club de Lectura</h1>
+        <a href="login.html">Cerrar Sesion</a>
+        <h2>Buscar Libros</h2><input type="text">
+
+    </header>
+    <hr>
+    <main>
+        <h2>Libros Disponibles</h2>
+        <div class="book">
+            <img src="imagenes/navidad.jpg" height="400" width="300">
+            <h3>Cuento de Navidad</h3>
+            <p>Autor: Charles Dickens</p>
+            <p>Género: Navidad</p>
+            <p>Sinopsis: Ebenezer Scrooge comienza las vacaciones de Navidad con su habitual actitud despreciativa y
+                bruscos modales cuando habla con su fiel empleado Bob Cratchit y
+                con su alegre sobrino. Pero cuando los espíritus de las Navidades pasadas, presentes y futuras lo llevan
+                en un esclarecedor viaje que le revela verdades que él
+                se resiste a ver, el viejo Scrooge finalmente deberá abrir su corazón y compensar años de rencor antes
+                de que sea demasiado tarde</p>
+            <div class="rating">
+                <p>Calificar:</p>
+                <div class="stars">
+                    <span class="star" data-rating="1">&#9733;</span>
+                    <span class="star" data-rating="2">&#9733;</span>
+                    <span class="star" data-rating="3">&#9733;</span>
+                    <span class="star" data-rating="4">&#9733;</span>
+                    <span class="star" data-rating="5">&#9733;</span>
+                </div>
+                <p>Tu calificación: <span id="user-rating">0</span> estrellas</p>
+            </div>
+            <div>
+                <h3>Deja tu comentario:</h3>
+                <form id="comment-form1">
+                    <label for="comment1">Comentario:</label>
+                    <textarea id="comment1" name="comment1" rows="4" required></textarea>
+                    <button type="submit">Enviar Comentario</button>
+                </form>
+
+                <h3>Comentarios de otros lectores:</h3>
+                <div class="comments1">
+                    <div class="comment1">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="book">
+            <img src="imagenes/ciudad.jpg" height="400" width="300">
+            <h3>La Ciuadad y los Perros</h3>
+            <p>Autor: Mario Vargas Llosa</p>
+            <p>Género: Fantasía</p>
+            <p>Sinopsis: La ciudad y los perros, cuenta a través de la denuncia del machismo y la violencia de un
+                colegio militar de Lima, una crítica a la sociedad peruana. Narra la brutalidad encarecida ejercida en
+                un grupo de jóvenes alumnos de un colegio militar en Lima.
+            </p>
+            <div class="rating">
+                <p>Calificar:</p>
+                <div class="stars">
+                    <span class="star" data-rating="1">&#9733;</span>
+                    <span class="star" data-rating="2">&#9733;</span>
+                    <span class="star" data-rating="3">&#9733;</span>
+                    <span class="star" data-rating="4">&#9733;</span>
+                    <span class="star" data-rating="5">&#9733;</span>
+                </div>
+                <p>Tu calificación: <span id="user-rating1">0</span> estrellas</p>
+            </div>
+            <div>
+                <h3>Deja tu comentario:</h3>
+                <form id="comment-form2">
+                    <label for="comment-form2">Comentario:</label>
+                    <textarea id="comment2" name="comment2" rows="4" required></textarea>
+                    <button type="submit">Enviar Comentario</button>
+                </form>
+
+                <h3>Comentarios de otros lectores:</h3>
+                <div class="comments2">
+                    <div class="comment2">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="book">
+            <img src="imagenes/soledad.jpg" height="400" width="300">
+            <h3>Cien Años de Soledad</h3>
+            <p>Autor: Grabiel Garcia Marquez</p>
+            <p>Género: Realismo Mágico</p>
+            <p>Sinopsis: Entre la boda de José Arcadio Buendía con Amelia Iguarán hasta la maldición de Aureliano
+                Babilonia transcurre todo un siglo. Cien años de soledad para una estirpe única,
+                fantástica, capaz de fundar una ciudad tan especial como Macondo y de engendrar niños con cola de cerdo.
+            </p>
+            <div class="rating">
+                <p>Calificar:</p>
+                <div class="stars">
+                    <span class="star" data-rating="1">&#9733;</span>
+                    <span class="star" data-rating="2">&#9733;</span>
+                    <span class="star" data-rating="3">&#9733;</span>
+                    <span class="star" data-rating="4">&#9733;</span>
+                    <span class="star" data-rating="5">&#9733;</span>
+                </div>
+                <p>Tu calificación: <span id="user-rating2">0</span> estrellas</p>
+            </div>
+            <div>
+                <h3>Deja tu comentario:</h3>
+                <form id="comment-form">
+                    <label for="comment">Comentario:</label>
+                    <textarea id="comment" name="comment" rows="4" required></textarea>
+                    <button type="submit">Enviar Comentario</button>
+                </form>
+
+                <h3>Comentarios de otros lectores:</h3>
+                <div class="comments">
+                    <div class="comment">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Club de Lectura</p>
+    </footer>
+
+    <script>
+        const stars = document.querySelectorAll('.star');
+        const userRating = document.getElementById('user-rating');
+        const userRating1 = document.getElementById('user-rating1');
+        const userRating2 = document.getElementById('user-rating2');
+
+        stars.forEach(star => {
+            star.addEventListener('mouseover', () => {
+                const rating = parseInt(star.getAttribute('data-rating'));
+                userRating.textContent = rating;
+                userRating1.textContent = rating;
+                userRating2.textContent = rating;
+            });
+        });
+    </script>
+
+
+<script>
+    const commentForm = document.getElementById('comment-form');
+    const commentTextArea = document.getElementById('comment');
+    const commentsContainer = document.querySelector('.comments');
+
+    commentForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const commentText = commentTextArea.value;
+        if (commentText.trim() !== '') {
+            addComment(commentText);
+            commentTextArea.value = '';
+        }
+    });
+
+    function addComment(commentText) {
+        const commentDiv = document.createElement('div');
+        commentDiv.classList.add('comment');
+        const username = 'Usuario';
+        commentDiv.innerHTML = `<p><strong>${username}:</strong></p><p>${commentText}</p>`;
+        const boton = document.createElement("button")
+        boton.textContent="Eliminar"
+        commentDiv.appendChild(boton)
+        commentsContainer.appendChild(commentDiv);
+
+        boton.addEventListener("click",()=>{
+            commentsContainer.removeChild(commentDiv)
+        });
+    }
+</script>
+
+<script>
+    const commentForm1 = document.getElementById('comment-form1');
+    const commentTextArea1 = document.getElementById('comment1');
+    const commentsContainer1 = document.querySelector('.comments1');
+
+    commentForm1.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const commentText = commentTextArea1.value;
+        if (commentText.trim() !== '') {
+            addComment1(commentText);
+            commentTextArea1.value = '';
+        }
+    });
+
+    function addComment1(commentText) {
+        const commentDiv = document.createElement('div');
+        commentDiv.classList.add('comment');
+        const username = 'Usuario';
+        commentDiv.innerHTML = `<p><strong>${username}:</strong></p><p>${commentText}</p>`;
+        const boton = document.createElement("button")
+        boton.textContent="Eliminar"
+        commentDiv.appendChild(boton)
+        commentsContainer1.appendChild(commentDiv);
+
+        boton.addEventListener("click",()=>{
+            commentsContainer1.removeChild(commentDiv)
+        });
+    }
+</script>
+
+<script>
+    const commentForm2 = document.getElementById('comment-form2');
+    const commentTextArea2 = document.getElementById('comment2');
+    const commentsContainer2 = document.querySelector('.comments2');
+
+    commentForm2.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const commentText = commentTextArea2.value;
+        if (commentText.trim() !== '') {
+            addComment2(commentText);
+            commentTextArea2.value = '';
+        }
+    });
+
+    function addComment2(commentText) {
+        const commentDiv = document.createElement('div');
+        commentDiv.classList.add('comment');
+        const username = 'Usuario';
+        commentDiv.innerHTML = `<p><strong>${username}:</strong></p><p>${commentText}</p>`;
+        const boton = document.createElement("button")
+        boton.textContent="Eliminar"
+        commentDiv.appendChild(boton)
+        commentsContainer2.appendChild(commentDiv);
+
+        boton.addEventListener("click",()=>{
+            commentsContainer2.removeChild(commentDiv)
+        });
+    }
+</script>
+
+</body>
+
+</html>

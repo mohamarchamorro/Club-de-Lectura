@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Registrarse - Club de Lectura</title>
+</head>
+
+<body>
+    <header>
+        <h1>Club de Lectura</h1>
+    </header>
+
+    <main>
+        <h2>Registrarse</h2>
+        <form>
+            <div>
+                <label for="username">-Nombre de usuario:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+
+            <div>
+                <label for="email">-Correo Electrónico:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+
+            <div>
+                <label for="password">-Contraseña:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+
+            <div>
+                <label for="confirmar-password">-Confirmar Contraseña:</label>
+                <input type="password" id="confirmar-password" name="confirmar-password" required>
+            </div>
+
+            <div>
+                <label for="descripcion">-Descripción/Intereses:</label>
+                <textarea id="descripcion" name="descripcion" rows="4"></textarea>
+            </div>
+
+
+            <div>
+                <label>-Género de Lectura Preferido:</label>
+                <select>
+                    <option value="ciencia-ficcion">Ciencia Ficción</option>
+                    <option value="fantasia">Fantasía</option>
+                    <option value="misterio">Misterio</option>
+                    <option value="romance">Romance</option>
+                    <option value="horror">Horror</option>
+                    <option value="navidad">Navidad</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="perfil">-Seleccionar Foto de Perfil:</label>
+                <input type="file" id="perfil" name="perfil">
+            </div>
+
+
+            <div><input type="submit" value="Registrarse"></div>
+        </form>
+
+        <p>O regístrate con:</p>
+        <a href="">Google</a>
+
+        <p>¿Ya tienes una cuenta? <a href="login.html">Inicia sesión aquí</a></p>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Club de Lectura</p>
+    </footer>
+</body>
+
+</html>

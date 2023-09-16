@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Agregar Libros - Club de Lectura</title>
+</head>
+<body>
+    <header>
+        <div id="header-content">
+            <h1>Club de Lectura</h1>
+            <a href="login.html">Cerrar Sesión</a>
+        </div>
+    </header>
+    
+    <main>
+        <h2>Agregar Libro</h2>
+        <form id="add-book-form">
+            <label for="title">Título:</label>
+            <input type="text" id="title" name="title" required><br>
+            
+            <label for="authors">Autores:</label>
+            <input type="text" id="authors" name="authors" required><br>
+            
+            <label for="genre">Género Literario:</label>
+            <input type="text" id="genre" name="genre" required><br>
+            
+            <label for="year">Año de Publicación:</label>
+            <input type="number" id="year" name="year" required><br>
+            
+            <label for="description">Descripción/Sinopsis:</label>
+            <textarea id="description" name="description" rows="4" required></textarea><br>
+            
+            <label for="cover">Portada del Libro:</label>
+            <input type="file" id="cover" name="cover" accept="image/*" required><br>
+            
+            <img id="cover-preview" src="" alt="Vista previa de la portada" style="max-width: 200px; display: none;">
+            
+            <button type="submit">Agregar Libro</button>
+        </form>
+        
+        <h2>Libro Agregado</h2>
+        <div id="added-book-details">
+        </div>
+    </main>
+    
+    <footer>
+        <p>&copy; 2023 Club de Lectura</p>
+    </footer>
+    
+    <script>
+        const addBookForm = document.getElementById('add-book-form');
+        const addedBookDetails = document.getElementById('added-book-details');
+        const coverInput = document.getElementById('cover');
+        const coverPreview = document.getElementById('cover-preview');
+
+        coverInput.addEventListener('change', () => {
+            const selectedFile = coverInput.files[0];
+            if (selectedFile) {
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                    coverPreview.src = e.target.result;
+                    coverPreview.style.display = 'block';
+                };
+                reader.readAsDataURL(selectedFile);
+            }
+        });
+
+        addBookForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const title = document.getElementById('title').value;
+            const authors = document.getElementById('authors').value;
+            const genre = document.getElementById('genre').value;
+            const year = document.getElementById('year').value;
+            const description = document.getElementById('description').value;
+            addedBookDetails.innerHTML = `
+                <p><strong>Título:</strong> ${title}</p>
+                <p><strong>Autores:</strong> ${authors}</p>
+                <p><strong>Género Literario:</strong> ${genre}</p>
+                <p><strong>Año de Publicación:</strong> ${year}</p>
+                <p><strong>Descripción/Sinopsis:</strong> ${description}</p>
+                <p><strong>Portada del Libro:</strong></p>
+                <img src="${coverPreview.src}" alt="${title} height="400" width="300"">
+            `;
+        });
+    </script>
+</body>
+</html>
