@@ -61,10 +61,8 @@
             button.addEventListener('click', () => {
                 const bookId = button.getAttribute('data-book-id');
                 if (confirm(`¿Estás seguro de que quieres eliminar el Libro ${bookId}?`)) {
-                    // Aquí puedes agregar la lógica para eliminar el libro del sistema
-                    // y actualizar la interfaz de usuario
                     const bookElement = button.parentElement;
-                    bookElement.remove(); // Elimina el libro de la vista
+                    bookElement.remove();
                 }
             });
         });
